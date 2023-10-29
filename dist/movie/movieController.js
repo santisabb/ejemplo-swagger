@@ -1,5 +1,5 @@
-import { MovieRepository } from './movieRepository';
-import { Movie } from './movieEntity';
+import { MovieRepository } from './movieRepository.js';
+import { Movie } from './movieEntity.js';
 const movieRepo = new MovieRepository();
 function findAll(req, res) {
     res.json({ data: movieRepo.findAll() });
@@ -19,7 +19,7 @@ function findOne(req, res) {
     res.json({ data: movie });
 }
 function update(req, res) {
-    req.body.id = req.params.movieId;
+    req.body.movieId = req.params.movieId;
     const movie = movieRepo.update(req.body);
     if (!movie) {
         return res.status(404).send({ message: 'Movie not found bro' });

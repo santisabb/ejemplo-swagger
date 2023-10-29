@@ -1,1 +1,17 @@
-GET http://localhost:8080/api/movies
+GET http://localhost:8080/movies
+
+###
+GET http://localhost:8080/movies/3b92096e-e39f-42fc-91c3-12e0bdd4a0d8
+
+###
+POST http://localhost:8080/movies
+Content-Type: application/json
+
+{
+    "title": "After Hours",
+    "year": 1989,
+    "director": "Martin Scorsese",
+    "genre": [
+        "Drama"
+    ]
+}

@@ -1,6 +1,6 @@
-import { Movie } from "./movieEntity";
+import { Movie } from "./movieEntity.js";
 const movies = [
-    new Movie('Forrest Gump', 1994, 'Robert Zemeckis', 'Drama', 'a02b91bc-3769-4221-beb1-d7a3aeba7dad')
+    new Movie('Forrest Gump', 1994, 'Robert Zemeckis', ['Drama'], 'a02b91bc-3769-4221-beb1-d7a3aeba7dad')
 ];
 export class MovieRepository {
     findAll() {

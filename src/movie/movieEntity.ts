@@ -5,7 +5,7 @@ export class Movie{
         public title: string,
         public year: number,
         public director: string,
-        public genre: string,
+        public genre: string[],
         public movieId = crypto.randomUUID()
     ) {}
 }

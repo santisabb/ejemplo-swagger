@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction, response } from 'express'
-import { MovieRepository } from './movieRepository'
-import { Movie } from './movieEntity'
+import { Request, Response } from 'express'
+import { MovieRepository } from './movieRepository.js'
+import { Movie } from './movieEntity.js'
 
 const movieRepo = new MovieRepository()
 
@@ -33,7 +33,7 @@ function findOne(req:Request, res:Response){
 }
 
 function update(req:Request, res:Response){
-    req.body.id = req.params.movieId
+    req.body.movieId = req.params.movieId
     const movie = movieRepo.update(req.body)
 
     if(!movie){

@@ -1,13 +1,13 @@
 import { it } from "node:test";
-import { Repository } from "../shared/repository"
-import { Movie } from "./movieEntity"
+import { Repository } from "../shared/repository.js"
+import { Movie } from "./movieEntity.js"
 
 const movies = [
     new Movie(
         'Forrest Gump',
         1994,
         'Robert Zemeckis',
-        'Drama',
+        ['Drama'],
         'a02b91bc-3769-4221-beb1-d7a3aeba7dad'
     )
 ]
@@ -17,7 +17,7 @@ export class MovieRepository implements Repository<Movie>{
         return movies
     }
 
-    public findOne(item: { id: string; }): Movie | undefined {
+    public findOne(item: { id: string }): Movie | undefined {
         return movies.find((movies) => movies.movieId === item.id)
     }
 
